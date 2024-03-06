@@ -1,5 +1,13 @@
+import Header from "../../components/Header";
+
 const Home = () => {
-  return <h1>AC Countries</h1>;
+  return (
+    <>
+      <Header />
+      
+      <h1>AC Countries</h1>
+    </>
+  );
 };
 
 export default Home;
