@@ -4,13 +4,20 @@ import { Link } from "react-router-dom";
 import Logo from "../../assets/ac-logo.svg";
 
 import * as styles from "./styles";
+import { Typography } from "../Typography";
 
 const Header: React.FC = () => {
   return (
     <styles.Header>
-      <Link to="/">
-        <styles.LogoComponent src={Logo} alt="AC-Logo" />
-      </Link>
+      <styles.Container>
+        <Link to="/">
+          <styles.LogoComponent src={Logo} alt="AC-Logo" />
+        </Link>
+
+        <Typography size="xl" weight={300}>
+          AC Countries
+        </Typography>
+      </styles.Container>
     </styles.Header>
   );
 };
