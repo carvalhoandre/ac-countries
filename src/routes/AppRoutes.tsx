@@ -1,5 +1,6 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import { useState } from "react";
+
+import useCountries from "../hooks/countries";
 
 import Home from "../pages/Home";
 import Countries from "../pages/Countries";
@@ -22,14 +23,13 @@ const router = createBrowserRouter([
 ]);
 
 export default function App() {
-  /* TODO: implementar login */
-  const [isLoading, setIsLoading] = useState(false);
+  const { loading } = useCountries();
 
   if (import.meta.hot) {
     import.meta.hot.dispose(() => router.dispose());
   }
 
-  if (isLoading) {
+  if (loading) {
     return <h1>Carregando...</h1>;
   }
 
