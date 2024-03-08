@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { primary } from "../../../../styles/theme";
 
 export const Section = styled.section`
   display: flex;
@@ -33,5 +34,22 @@ export const Image = styled.img`
     max-width: 250px;
     max-height: 250px;
     margin-top: 1.5rem;
+  }
+`;
+
+export const ButtonHome = styled.button`
+  background-color: ${primary.dark};
+  padding: 0.8rem 1.3rem;
+  border: none;
+  border-radius: 0.5rem;
+  max-width: 10rem;
+
+  &:hover {
+    background-color: ${primary.light};
+    cursor: pointer;
+  }
+
+  @media screen and (max-width: 767px) {
+    align-items: center;
   }
 `;

@@ -1,13 +1,13 @@
 import { DefaultTheme } from "styled-components";
 
 export const fontSize = {
-  caption: "0.75rem",
-  small: "0.875rem",
+  caption: "0.7rem",
+  small: "0.8rem",
   default: "1rem",
-  heading: "1.125rem",
-  heading2: "1.25rem",
+  heading: "1.1rem",
+  heading2: "1.2rem",
   heading4: "1.5rem",
-  xl: "2.625rem",
+  xl: "2.6rem",
 };
 
 export const grey = {
