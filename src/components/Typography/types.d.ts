@@ -3,4 +3,5 @@ interface ITypographyProps {
   size?: "xs" | "sm" | "md" | "bg" | "lg" | "xl" | "xxl";
   color?: string;
   weight?: number;
+  isUppercase?: boolean;
 }

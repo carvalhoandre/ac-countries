@@ -1,11 +1,13 @@
 import Header from "../../components/Header";
 
+import Emphasis from "./components/Emphasis";
+
 const Home = () => {
   return (
     <>
       <Header />
       
-      <h1>AC Countries</h1>
+      <Emphasis />
     </>
   );
 };
