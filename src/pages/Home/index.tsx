@@ -1,4 +1,4 @@
-import { Header } from "../../components";
+import { Header, Footer } from "../../components";
 import Emphasis from "./components/Emphasis";
 
 import * as styles from "./styles";
@@ -9,11 +9,15 @@ const Home = () => {
     <>
       <Header />
 
-      <styles.Container>
-        <Emphasis />
+      <styles.Content>
+        <styles.Container>
+          <Emphasis />
 
-        <Countries />
-      </styles.Container>
+          <Countries />
+        </styles.Container>
+
+        <Footer />
+      </styles.Content>
     </>
   );
 };

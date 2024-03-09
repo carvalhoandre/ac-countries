@@ -1,10 +1,11 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
+import { Typography } from "../Typography";
+
 import Logo from "../../assets/ac-logo.svg";
 
 import * as styles from "./styles";
-import { Typography } from "../Typography";
 
 export const Header: React.FC = () => {
   return (
