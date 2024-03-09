@@ -1,30 +1,54 @@
 # AC Countries
+Acesse: https://accountries.netlify.app/
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+AC Countries é um projeto desenvolvido em React com TypeScript para consultar e apresentar informações sobre países utilizando a API RestCountries.
 
-Currently, two official plugins are available:
+## Como Iniciar o Projeto
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Para iniciar o projeto localmente, siga os passos abaixo:
 
-## Expanding the ESLint configuration
+1. **Clone o repositório:**
+   `git clone https://github.com/carvalhoandre/ac-countries`
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+2. **Instale as dependências:**
+  `cd ac-countries`
+  `npm i`
 
-- Configure the top-level `parserOptions` property like this:
+3. **Inicie o servidor de desenvolvimento:**
+  `npm run dev`
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+4. **Acesse a aplicação no navegador:**
+Abra [http://localhost:3000](http://localhost:3000) no seu navegador.
+
+## Resumo do Projeto
+
+O projeto consome a API [RestCountries](https://restcountries.com/) para fornecer um sistema de busca e apresentação de informações sobre países. Utiliza tecnologias como React, TypeScript, Axios para requisições HTTP, React Router DOM para o roteamento, Styled Components para estilização, entre outras.
+
+## Ilustrações
+
+As ilustrações utilizadas no projeto foram obtidas de [undraw.co](https://undraw.co/illustrations).
+
+## Dependências Principais
+
+- **axios**: ^1.6.7
+- **react**: ^18.2.0
+- **react-dom**: ^18.2.0
+- **react-router-dom**: ^6.22.2
+- **styled-components**: ^6.1.8
+- **typescript**: ^5.2.2
+
+## Dependências de Desenvolvimento
+
+- **@types/react**: ^18.2.56
+- **@typescript-eslint/eslint-plugin**: ^7.0.2
+- **@typescript-eslint/parser**: ^7.0.2
+- **eslint**: ^8.56.0
+- **vite**: ^5.1.4
+
+## Scripts Disponíveis
+
+- `dev`: Inicia o servidor de desenvolvimento.
+- `build`: Compila o código TypeScript e cria uma versão otimizada para produção.
+- `lint`: Executa o linter ESLint para verificar e corrigir problemas no código.
+- `preview`: Inicia um servidor para visualizar a versão de produção localmente.
