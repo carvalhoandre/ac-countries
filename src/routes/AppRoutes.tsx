@@ -1,7 +1,5 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
-import useCountries from "../hooks/countries";
-
 import { Loader } from "../components";
 
 import Home from "../pages/Home";
