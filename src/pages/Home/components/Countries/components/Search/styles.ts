@@ -16,9 +16,9 @@ export const Search = styled.div`
   border: ${grey.lighter} 0.1rem solid;
   border-radius: 0.5em;
   padding: 0.4em 0.9em;
-  width: 30%;
   background-color: ${grey.white};
   width: 15rem;
+  position: relative;
 
   @media screen and (max-width: 767px) {
     width: 80%;
@@ -38,19 +38,42 @@ export const Input = styled.input`
   }
 `;
 
+export const History = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+  border: ${grey.lighter} 0.1rem solid;
+  border-radius: 0.5em;
+  padding: 0.4em 0.9em;
+  background-color: ${grey.white};
+  width: 14.8rem;
+  padding: 0.5rem 1rem;
+  position: absolute;
+  top: 33px;
+  left: 0px;
+  z-index: 100;
+`;
+
 export const ButtonSearch = styled.button`
   background-color: ${primary.dark};
   padding: 0.5rem 1.3rem;
   border: none;
   border-radius: 0.5rem;
   width: 8rem;
+  cursor: pointer;
 
   &:hover {
     background-color: ${primary.light};
-    cursor: pointer;
   }
 
   @media screen and (max-width: 767px) {
     align-items: center;
   }
+`;
+
+export const ButtonHistory = styled.button`
+  cursor: pointer;
+  background-color: ${grey.white};
+  border: none;
+  padding: 2px;
 `;

@@ -7,6 +7,7 @@ export const Container = styled.section`
   justify-content: center;
   align-items: center;
   margin-top: 5rem;
+  gap: 1rem;
 
   @media screen and (min-width: 768px) {
     display: flex;

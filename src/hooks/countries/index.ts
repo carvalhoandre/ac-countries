@@ -1,6 +1,5 @@
 import React from "react";
 
-import axios from "axios";
 import { toast } from "react-toastify";
 
 import { getAllCountries, getCountriesByName } from "../../services/countries";
@@ -17,7 +16,7 @@ const useCountries = () => {
     try {
       const response = await getAllCountries();
 
-      if (axios.isAxiosError(response)) throw new Error();
+      if (response.status !== 200)  throw new Error();
       
       setCountries(response.data);
     } catch {
@@ -41,7 +40,7 @@ const useCountries = () => {
     try {
       const response = await getCountriesByName(name);
 
-      if (axios.isAxiosError(response)) throw new Error();
+      if (response.status !== 200 || response.data.length === 0) throw new Error();
       
       return response.data
     } catch {

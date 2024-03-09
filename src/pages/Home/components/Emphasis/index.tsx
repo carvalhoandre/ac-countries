@@ -1,5 +1,3 @@
-import { Link } from "react-router-dom";
-
 import TheWorld from "../../../../assets/unDraw/around_the_world.svg";
 import { Typography } from "../../../../components/Typography";
 import { grey } from "../../../../styles/theme";
@@ -27,7 +25,7 @@ const Emphasis = (): JSX.Element => {
           </Typography>
 
           <Typography $weight={300}>
-            Explore o mundo em nosso marketplace
+            Explore o mundo buscando países em nosso marketplace
           </Typography>
         </styles.ContainerText>
 

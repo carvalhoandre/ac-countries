@@ -1,22 +1,38 @@
 import React from "react";
-
 import { ISearchProps } from "./types";
-
 import useCountries from "../../../../../../hooks/countries";
-
+import { useStorage } from "../../../../../../hooks/storage/search";
 import { grey } from "../../../../../../styles/theme";
 import { Typography } from "../../../../../../components/Typography";
-
 import * as styles from "./styles";
 
 export const Search = ({ onChange }: ISearchProps): JSX.Element => {
   const { searchCountriesByName } = useCountries();
+  const { setSearchStorage, getSearchStorage } = useStorage();
 
   const [search, setSearch] = React.useState("");
-  const handleSeach = async () => {
-    const countriesResult = await searchCountriesByName(search);
+  const [isHistoryVisible, setHistoryVisible] = React.useState(false);
+  const historySearch = getSearchStorage();
 
-    if (countriesResult.length > 0) onChange(countriesResult);
+  const handleSearch = async () => {
+    const countriesResult = await searchCountriesByName(search);
+    if (countriesResult.length === 0) return;
+    onChange(countriesResult);
+    setSearchStorage(search);
+  };
+
+  const handleInputFocus = () => {
+    setHistoryVisible(true);
+  };
+
+  const handleInputBlur = () => {
+    setHistoryVisible(false);
+  };
+
+  const handleHistoryItemClick = (searchItem: string) => {
+    console.log(searchItem);
+    setSearch(searchItem);
+    setHistoryVisible(false);
   };
 
   return (
@@ -25,14 +41,32 @@ export const Search = ({ onChange }: ISearchProps): JSX.Element => {
         <i className="uil uil-search search_icon" />
 
         <styles.Input
-          name="search"
+          name="search-input"
           type="text"
           placeholder="Buscar..."
+          value={search}
           onChange={(e) => setSearch(e.target.value)}
+          onFocus={handleInputFocus}
         />
+
+        {isHistoryVisible && historySearch.length > 0 && (
+          <styles.History>
+            {historySearch.map((searchItem: string, index: number) => (
+              <styles.ButtonHistory
+                key={index}
+                onClick={() => {
+                  console.log(`opa`, searchItem)
+                  handleHistoryItemClick(searchItem)}
+                } 
+              >
+                <Typography size="sm">{searchItem}</Typography>
+              </styles.ButtonHistory>
+            ))}
+          </styles.History>
+        )}
       </styles.Search>
 
-      <styles.ButtonSearch onClick={handleSeach}>
+      <styles.ButtonSearch onClick={handleSearch}>
         <Typography
           size="bg"
           $weight={500}
