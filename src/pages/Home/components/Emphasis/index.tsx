@@ -10,11 +10,11 @@ const Emphasis = (): JSX.Element => {
   return (
     <styles.Section>
       <styles.ContainerText>
-        <Typography size="xxl" weight={900}>
+        <Typography size="xxl" $weight={900}>
           Descubra Milhares de países
         </Typography>
 
-        <Typography weight={300}>
+        <Typography $weight={300}>
           Explore o mundo em nosso marketplace
         </Typography>
 
@@ -22,7 +22,7 @@ const Emphasis = (): JSX.Element => {
           <styles.ButtonHome>
             <Typography
               size="bg"
-              weight={500}
+              $weight={500}
               textAlign="center"
               color={grey.lightest}
             >

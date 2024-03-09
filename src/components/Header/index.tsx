@@ -14,7 +14,7 @@ const Header: React.FC = () => {
           <styles.LogoComponent src={Logo} alt="AC-Logo" />
         </Link>
 
-        <Typography size="md" weight={500} isUppercase>
+        <Typography size="md" $weight={500} $isUppercase>
           AC Countries
         </Typography>
       </styles.Container>

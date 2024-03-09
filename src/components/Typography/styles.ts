@@ -25,7 +25,7 @@ const handleFontSize = (props: ITypographyProps): string => {
 export const StyledTypography = styled.p<ITypographyProps>`
   font-size: ${handleFontSize};
   color: ${({ color }) => (color ? color : grey.darkest)};
-  font-weight: ${({ weight }) => weight};
-  text-transform: ${({ isUppercase }) => isUppercase && "uppercase"};
+  font-$weight: ${({ $weight }) => $weight};
+  text-transform: ${({ $isUppercase }) => $isUppercase && "uppercase"};
   text-align: ${({ textAlign }) => textAlign || "none"};
 `;

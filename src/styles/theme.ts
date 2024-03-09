@@ -17,7 +17,7 @@ export const grey = {
   default: "#A6A6A6",
   light: "#CCCCCC",
   lighter: "#F2F2F2",
-  lightest: "#FCFCFC",
+  lightest: "#F9F9F9",
   white: "#FFFF",
 };
 

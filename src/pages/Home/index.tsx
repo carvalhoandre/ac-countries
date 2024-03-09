@@ -13,7 +13,7 @@ const Home = () => {
       <styles.Info>
         <Typography
           size="bg"
-          weight={700}
+          $weight={700}
           textAlign="center"
           color={grey.lightest}
         >
