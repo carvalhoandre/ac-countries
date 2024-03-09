@@ -1,4 +1,4 @@
-import Header from "../../components/Header";
+import { Header } from "../../components";
 import Emphasis from "./components/Emphasis";
 
 import * as styles from "./styles";

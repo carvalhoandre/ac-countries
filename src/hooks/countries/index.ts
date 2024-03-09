@@ -10,51 +10,38 @@ const useCountries = () => {
   const [loading, setLoading] = React.useState(false);
   const [countries, setCountries] = React.useState<Array<ICountrie>>([]);
 
-  const fechCountries = async ():Promise<void> => {
+  const fechCountries = async (): Promise<void> => {
     setLoading(true);
 
     try {
       const response = await getAllCountries();
 
-      if (response.status !== 200)  throw new Error();
-      
+      if (response.status !== 200) throw new Error();
+
       setCountries(response.data);
     } catch {
-      toast("Error ao buscar países", {
-        position: "top-center",
-        autoClose: 5000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: true,
-        progress: 1,
-      });
+      toast("Error ao buscar países", { progress: 1 });
     } finally {
       setLoading(false);
     }
   };
 
-  const searchCountriesByName = async (name:string):Promise<Array<ICountrie> | []> => {
+  const searchCountriesByName = async (
+    name: string
+  ): Promise<Array<ICountrie> | []> => {
     setLoading(true);
 
     try {
       const response = await getCountriesByName(name);
 
-      if (response.status !== 200 || response.data.length === 0) throw new Error();
-      
-      return response.data
-    } catch {
-      toast("Error ao buscar países", {
-        position: "top-center",
-        autoClose: 5000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: true,
-        progress: 1,
-      });
+      if (response.status !== 200 || response.data.length === 0)
+        throw new Error();
 
-      return []
+      return response.data;
+    } catch (e: any) {
+      toast("Nenhum país encontrado", { progress: 1 });
+
+      return [];
     } finally {
       setLoading(false);
     }
@@ -64,7 +51,7 @@ const useCountries = () => {
     countries,
     loading,
     fechCountries,
-    searchCountriesByName
+    searchCountriesByName,
   };
 };
 

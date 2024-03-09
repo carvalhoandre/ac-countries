@@ -3,6 +3,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import useCountries from "../hooks/countries";
 
 import Home from "../pages/Home";
+import { Loader } from "../components";
 
 const router = createBrowserRouter([
   {
@@ -22,7 +23,7 @@ export default function App() {
   }
 
   if (loading) {
-    return <h1>Carregando...</h1>;
+    return <Loader />;
   }
 
   return <RouterProvider router={router} />;

@@ -6,7 +6,7 @@ import Logo from "../../assets/ac-logo.svg";
 import * as styles from "./styles";
 import { Typography } from "../Typography";
 
-const Header: React.FC = () => {
+export const Header: React.FC = () => {
   return (
     <styles.Header>
       <styles.Container>
@@ -21,5 +21,3 @@ const Header: React.FC = () => {
     </styles.Header>
   );
 };
-
-export default Header;
