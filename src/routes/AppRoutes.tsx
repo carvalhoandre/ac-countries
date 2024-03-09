@@ -3,21 +3,13 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import useCountries from "../hooks/countries";
 
 import Home from "../pages/Home";
-import Countries from "../pages/Countries";
 
 const router = createBrowserRouter([
   {
-    path: "/",
+    path: "/*",
     loader: () => ({ message: "Carregando" }),
     Component() {
       return <Home />;
-    },
-  },
-  {
-    path: "/countries",
-    loader: () => ({ message: "Carregando" }),
-    Component() {
-      return <Countries />;
     },
   },
 ]);

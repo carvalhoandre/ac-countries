@@ -10,3 +10,11 @@ export const getAllCountries = async (): Promise<IGetAllCountriesResponse> => {
     throw new Error(e);
   }
 };
+
+export const getCountriesByName = async (name: string): Promise<IGetAllCountriesResponse> => {
+  try {
+    return await axios.get(`${API_URL}/name/${name}`);
+  } catch (e: any) {
+    throw new Error(e);
+  }
+};

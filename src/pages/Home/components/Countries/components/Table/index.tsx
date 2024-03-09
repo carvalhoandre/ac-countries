@@ -10,10 +10,10 @@ import {
   FlagImage,
   ExternalLink,
 } from "./styles";
-import { Link } from "react-router-dom";
-import { Typography } from "../../../../components/Typography";
 
-const Table = ({ countries }: ITableProps): JSX.Element => {
+import { Typography } from "../../../../../../components/Typography";
+
+export const Table = ({ countries }: ITableProps): JSX.Element => {
   return (
     <TableContainer>
       <TableStyled>
@@ -32,7 +32,7 @@ const Table = ({ countries }: ITableProps): JSX.Element => {
               <Typography>Região</Typography>
             </TableHeaderCell>
             <TableHeaderCell>
-              <Typography>Idioma</Typography>
+              <Typography>Idiomas</Typography>
             </TableHeaderCell>
             <TableHeaderCell>
               <Typography>Links Mapas</Typography>
@@ -42,13 +42,14 @@ const Table = ({ countries }: ITableProps): JSX.Element => {
 
         <tbody>
           {countries?.map((countrie, index) => {
+            let countrieName =
+              countrie.name.official !== countrie.name.official
+                ? `${countrie.name.official} / ${countrie.name.common}`
+                : countrie.name.official;
+
             return (
               <TableRow key={index}>
-                <TableCell>
-                  {countrie?.altSpellings
-                    ? Object.values(countrie.altSpellings).join(", ")
-                    : ""}
-                </TableCell>
+                <TableCell>{countrieName}</TableCell>
                 <TableCell>
                   <FlagImage
                     src={countrie.flags.svg}
@@ -78,7 +79,8 @@ const Table = ({ countries }: ITableProps): JSX.Element => {
                   )}
                   {countrie.maps.openStreetMaps && (
                     <>
-                      {" "}/{" "}
+                      {" "}
+                      /{" "}
                       <ExternalLink
                         href={countrie.maps.openStreetMaps}
                         target="_blank"
@@ -97,5 +99,3 @@ const Table = ({ countries }: ITableProps): JSX.Element => {
     </TableContainer>
   );
 };
-
-export default Table;
