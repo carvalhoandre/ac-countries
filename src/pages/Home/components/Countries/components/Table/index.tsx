@@ -37,6 +37,12 @@ export const Table = ({ countries }: ITableProps): JSX.Element => {
             <TableHeaderCell>
               <Typography>Links Mapas</Typography>
             </TableHeaderCell>
+            <TableHeaderCell>
+              <Typography>Moeda</Typography>
+            </TableHeaderCell>
+            <TableHeaderCell>
+              <Typography>População</Typography>
+            </TableHeaderCell>
           </TableRow>
         </TableHead>
 
@@ -91,6 +97,17 @@ export const Table = ({ countries }: ITableProps): JSX.Element => {
                     </>
                   )}
                 </TableCell>
+                <TableCell>
+                  {Object.keys(countrie?.currencies || {}).map(
+                    (currencyCode) => (
+                      <span key={currencyCode}>
+                        {countrie?.currencies?.[currencyCode]?.name} (
+                        {countrie?.currencies?.[currencyCode]?.symbol})
+                      </span>
+                    )
+                  )}
+                </TableCell>
+                <TableCell>{countrie?.population}</TableCell>
               </TableRow>
             );
           })}

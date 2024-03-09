@@ -41,7 +41,7 @@ export const Search = ({ onChange }: ISearchProps): JSX.Element => {
         <styles.Input
           name="search-input"
           type="text"
-          placeholder="Buscar..."
+          placeholder="Busque pelo nome do país"
           value={search}
           onChange={(e) => setSearch(e.target.value)}
           onFocus={handleInputFocus}

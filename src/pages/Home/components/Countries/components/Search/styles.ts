@@ -52,6 +52,10 @@ export const History = styled.div`
   top: 33px;
   left: 0px;
   z-index: 100;
+
+  @media screen and (max-width: 767px) {
+    width: 13rem;
+  }
 `;
 
 export const ButtonSearch = styled.button`

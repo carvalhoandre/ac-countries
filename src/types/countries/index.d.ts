@@ -36,7 +36,7 @@ export interface ICountrie {
     svg: string;
   };
   continents: Array<string>;
-  currencies: Array<Coin>;
+  [currencyCode: string]: Coin;
   demonyms: Array<Demonym>;
   fifa: string;
   flag: string;
