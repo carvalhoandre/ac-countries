@@ -4,9 +4,8 @@ import { ICountrie } from "../../../../types/countries";
 
 import useCountries from "../../../../hooks/countries";
 
-import { Typography, Loader } from "../../../../components";
+import { Typography, Loader, Table, Search, List } from "../../../../components";
 
-import { Table, Search, List } from "./components";
 import * as styles from "./styles";
 
 const Countries = (): JSX.Element => {

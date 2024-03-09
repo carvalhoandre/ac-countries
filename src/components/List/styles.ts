@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { grey } from "../../../../../../styles/theme";
+import { grey } from "../../styles/theme";
 
 export const Container = styled.div`
   display: flex;
@@ -24,7 +24,7 @@ export const Column = styled.div`
   display: flex;
   flex-direction: column;
   gap: 1rem;
-  width: 60%;
+  width: 100%;
   margin-top: 1.5rem;
 
   @media screen and (max-width: 767px) {
@@ -41,6 +41,7 @@ export const Card = styled.div`
   border: ${grey.light} 0.1rem solid;
   margin: auto;
   background-color: ${grey.white};
+  cursor: pointer;
 
   @media screen and (max-width: 767px) {
     width: 80%;

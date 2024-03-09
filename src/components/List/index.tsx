@@ -1,13 +1,17 @@
 import { IListProps } from "./types";
 
 import * as styles from "./styles";
-import { Typography } from "../../../../../../components/Typography";
+import { Typography } from "../Typography";
 
 export const List = ({ countries }: IListProps): JSX.Element => {
+  const navigateToDetails = (countrieName: string) => {
+    window.location.href = `details/&${countrieName}`;
+  };
+  
   return (
     <styles.Column>
       {countries.map((countrie, index) => (
-        <styles.Card key={index}>
+        <styles.Card key={index} onClick={() => navigateToDetails(countrie.name.official)}>
           <styles.Row>
             <Typography $weight={600} size="bg">
               {countrie.name.official}

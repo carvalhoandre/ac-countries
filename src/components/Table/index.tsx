@@ -11,9 +11,13 @@ import {
   ExternalLink,
 } from "./styles";
 
-import { Typography } from "../../../../../../components/Typography";
+import { Typography } from "../Typography";
 
 export const Table = ({ countries }: ITableProps): JSX.Element => {
+  const navigateToDetails = (countrieName: string) => {
+    window.location.href = `details/&${countrieName}`;
+  };
+
   return (
     <TableContainer>
       <TableStyled>
@@ -55,7 +59,9 @@ export const Table = ({ countries }: ITableProps): JSX.Element => {
 
             return (
               <TableRow key={index}>
-                <TableCell>{countrieName}</TableCell>
+                <TableCell onClick={() => navigateToDetails(countrieName)}>
+                  <ExternalLink>{countrieName}</ExternalLink>
+                </TableCell>
                 <TableCell>
                   <FlagImage
                     src={countrie.flags.svg}

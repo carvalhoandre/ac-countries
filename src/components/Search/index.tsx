@@ -1,13 +1,14 @@
 import React from "react";
 import { ISearchProps } from "./types";
 
-import useCountries from "../../../../../../hooks/countries";
-import { useStorage } from "../../../../../../hooks/storage/search";
+import useCountries from "../../hooks/countries";
+import { useStorage } from "../../hooks/storage/search";
 
-import { grey } from "../../../../../../styles/theme";
+import { grey } from "../../styles/theme";
 
-import { Typography } from "../../../../../../components/Typography";
+import { Typography } from "..";
 import * as styles from "./styles";
+
 
 export const Search = ({ onChange }: ISearchProps): JSX.Element => {
   const { searchCountriesByName } = useCountries();

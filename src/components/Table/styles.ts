@@ -1,6 +1,5 @@
 import styled from "styled-components";
-
-import { grey, fontSize } from "../../../../../../styles/theme";
+import { grey } from "../../styles/theme";
 
 export const TableContainer = styled.section`
   max-width: 100%;
@@ -45,6 +44,6 @@ export const FlagImage = styled.img`
 export const ExternalLink = styled.a`
   color: #007bff;
   text-decoration: none;
-  font-size: ${fontSize.small};
   text-align: center;
+  cursor: pointer;
 `;
