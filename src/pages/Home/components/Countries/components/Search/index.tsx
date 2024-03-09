@@ -1,8 +1,11 @@
 import React from "react";
 import { ISearchProps } from "./types";
+
 import useCountries from "../../../../../../hooks/countries";
 import { useStorage } from "../../../../../../hooks/storage/search";
+
 import { grey } from "../../../../../../styles/theme";
+
 import { Typography } from "../../../../../../components/Typography";
 import * as styles from "./styles";
 
@@ -25,12 +28,7 @@ export const Search = ({ onChange }: ISearchProps): JSX.Element => {
     setHistoryVisible(true);
   };
 
-  const handleInputBlur = () => {
-    setHistoryVisible(false);
-  };
-
   const handleHistoryItemClick = (searchItem: string) => {
-    console.log(searchItem);
     setSearch(searchItem);
     setHistoryVisible(false);
   };
