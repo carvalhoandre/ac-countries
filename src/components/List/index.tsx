@@ -4,8 +4,10 @@ import * as styles from "./styles";
 import { Typography } from "../Typography";
 
 export const List = ({ countries }: IListProps): JSX.Element => {
-  const navigateToDetails = (countrieName: string) => {
-    window.location.href = `details/&${countrieName}`;
+  const navigateToDetails = (countrie: string) => {
+    const countryNames = countrie.split(" ");
+    const firstCountryName = countryNames[0];
+    window.location.href = `details/&${firstCountryName}`;
   };
   
   return (

@@ -1,12 +1,14 @@
 import React from "react";
-import { Header, Footer, Loader, Typography } from "../../components";
-import LineChart from "./components/LineChart";
-
-import * as styles from "./styles";
-import useCountries from "../../hooks/countries";
 import { ICountrie } from "../../types/countries";
 
-const Details = () => {
+import useCountries from "../../hooks/countries";
+
+import { Header, Footer, Loader, Typography } from "../../components";
+
+import LineChart from "./components/LineChart";
+import * as styles from "./styles";
+
+const Details = ():JSX.Element => {
   const { loading, searchCountriesByName } = useCountries();
 
   const [countrie, setCountrie] = React.useState<ICountrie | null>(null);
@@ -14,7 +16,6 @@ const Details = () => {
   const fechCountrie = async () => {
     const countrieName = window.location.pathname.split("&")[1];
 
-    console.log(countrieName);
     if (countrieName.length < 1) return;
 
     const newCountrie = await searchCountriesByName(countrieName);

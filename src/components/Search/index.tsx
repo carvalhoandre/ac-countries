@@ -9,7 +9,6 @@ import { grey } from "../../styles/theme";
 import { Typography } from "..";
 import * as styles from "./styles";
 
-
 export const Search = ({ onChange }: ISearchProps): JSX.Element => {
   const { searchCountriesByName } = useCountries();
   const { setSearchStorage, getSearchStorage } = useStorage();
@@ -19,9 +18,14 @@ export const Search = ({ onChange }: ISearchProps): JSX.Element => {
   const historySearch = getSearchStorage();
 
   const handleSearch = async () => {
+    if (historySearch) setHistoryVisible(false);
+
     const countriesResult = await searchCountriesByName(search);
+
     if (countriesResult.length === 0) return;
+
     onChange(countriesResult);
+
     setSearchStorage(search);
   };
 
@@ -30,8 +34,9 @@ export const Search = ({ onChange }: ISearchProps): JSX.Element => {
   };
 
   const handleHistoryItemClick = (searchItem: string) => {
-    setSearch(searchItem);
     setHistoryVisible(false);
+
+    setSearch(searchItem);
   };
 
   return (
@@ -53,10 +58,7 @@ export const Search = ({ onChange }: ISearchProps): JSX.Element => {
             {historySearch.map((searchItem: string, index: number) => (
               <styles.ButtonHistory
                 key={index}
-                onClick={() => {
-                  console.log(`opa`, searchItem)
-                  handleHistoryItemClick(searchItem)}
-                } 
+                onClick={() => handleHistoryItemClick(searchItem)}
               >
                 <Typography size="sm">{searchItem}</Typography>
               </styles.ButtonHistory>

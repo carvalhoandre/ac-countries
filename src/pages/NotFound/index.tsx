@@ -3,7 +3,7 @@ import { Header, Typography } from "../../components";
 import NotFoundImage from "../../assets/unDraw/notFound.svg";
 
 import * as styles from "./styles";
-const Details = () => {
+const NotFound = () => {
   return (
     <>
       <Header />
@@ -18,4 +18,4 @@ const Details = () => {
   );
 };
 
-export default Details;
+export default NotFound;
