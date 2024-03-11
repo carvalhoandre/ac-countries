@@ -1,3 +1,5 @@
+import { useNavigate } from "react-router-dom";
+
 import { ITableProps } from "./types";
 
 import {
@@ -14,10 +16,14 @@ import {
 import { Typography } from "../Typography";
 
 export const Table = ({ countries }: ITableProps): JSX.Element => {
+  const navigate = useNavigate();
+
   const navigateToDetails = (countrie: string) => {
     const countryNames = countrie.split(" ");
-    const firstCountryName = countryNames[0];
-    window.location.href = `details/&${firstCountryName}`;
+    
+    const firstCountryName = countryNames.length > 1 ? countryNames[countryNames.length - 1] : countrie;
+  
+    navigate(`/details/&${firstCountryName}`);
   };
 
   return (

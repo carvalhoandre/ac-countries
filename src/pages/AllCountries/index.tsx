@@ -43,6 +43,7 @@ const AllCountries = () => {
           ) : (
             <>
               <Search onChange={setSearch} />
+              
               <List countries={viewCountries} />
             </>
           )}

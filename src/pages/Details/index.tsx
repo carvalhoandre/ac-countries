@@ -24,7 +24,7 @@ const Details = ():JSX.Element => {
   };
 
   React.useEffect(() => {
-    fechCountrie();
+    if (!countrie) fechCountrie();
   }, []);
 
   return (

@@ -1,13 +1,19 @@
+import { useNavigate } from "react-router-dom";
+
 import { IListProps } from "./types";
 
 import * as styles from "./styles";
 import { Typography } from "../Typography";
 
 export const List = ({ countries }: IListProps): JSX.Element => {
+  const navigate = useNavigate();
+
   const navigateToDetails = (countrie: string) => {
     const countryNames = countrie.split(" ");
-    const firstCountryName = countryNames[0];
-    window.location.href = `details/&${firstCountryName}`;
+    
+    const firstCountryName = countryNames.length > 1 ? countryNames[countryNames.length - 1] : countrie;
+  
+    navigate(`/details/&${firstCountryName}`);
   };
   
   return (
