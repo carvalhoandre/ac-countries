@@ -1,14 +1,15 @@
 import Chart from "react-apexcharts";
 import { IPropsLineChart } from "./types";
+import { grey } from "../../../../styles/theme";
 
  const LineChart = ({ countrie }: IPropsLineChart): JSX.Element => {
   const state = {
     series: [
       {
-        name: "$",
+        name: countrie?.name?.official || 'País',
         data: [
           {
-            x: "Populacao",
+            x: "População",
             y: countrie?.population || 0,
           },
           {
@@ -19,7 +20,7 @@ import { IPropsLineChart } from "./types";
       },
     ],
     options: {
-      colors: "#000",
+      colors: grey.darkest,
       chart: {
         height: 350,
         type: "bar",
@@ -39,7 +40,7 @@ import { IPropsLineChart } from "./types";
             style: {
               fontSize: "12px",
               fontWeight: 700,
-              fontColor: "#000",
+              fontColor: grey.darkest,
             },
           },
         },
