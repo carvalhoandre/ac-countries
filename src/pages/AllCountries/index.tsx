@@ -1,33 +1,51 @@
 import React from "react";
-import {
-  Header,
-  Footer,
-  Loader,
-  List,
-  Typography,
-} from "../../components";
 
-import * as styles from "./styles";
 import useCountries from "../../hooks/countries";
 
-const AllCountries = () => {   
+import { Header, Footer, Loader, List, Typography } from "../../components";
+import { Search } from "./components/Search";
+
+import * as styles from "./styles";
+
+const AllCountries = () => {
   const { countries, loading, fechCountries } = useCountries();
 
-  React.useEffect(()=> {
+  const [search, setSearch] = React.useState("");
+
+  const filteredCountries =
+    search.length > 0
+      ? countries.filter(
+          (countrie) =>
+            countrie.name.common.toUpperCase().includes(search.toUpperCase()) ||
+            countrie.name.official.toUpperCase().includes(search.toUpperCase())
+        )
+      : [];
+
+  let viewCountries =
+    filteredCountries.length > 0 ? filteredCountries : countries;
+
+  React.useEffect(() => {
     fechCountries();
-  }, [])
+  }, []);
 
   return (
     <>
       <Header />
-      
-      <styles.Content>
-      <Typography $weight={800} size="xl" textAlign="center">
-        Descubra Novos países
-      </Typography>
 
+      <styles.Content>
         <styles.Container>
-          {loading && countries.length < 1  ? <Loader /> : <List countries={countries} />}
+          <Typography $weight={800} size="xl" textAlign="center">
+            Descubra Novos países
+          </Typography>
+
+          {loading && viewCountries.length < 1 ? (
+            <Loader />
+          ) : (
+            <>
+              <Search onChange={setSearch} />
+              <List countries={viewCountries} />
+            </>
+          )}
         </styles.Container>
 
         <Footer />
