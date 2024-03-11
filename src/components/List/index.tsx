@@ -10,8 +10,8 @@ export const List = ({ countries }: IListProps): JSX.Element => {
 
   const navigateToDetails = (countrie: string) => {
     const countrySlug = countrie.replace(/ /g, "-");
-  
-    navigate(`/details/&${countrySlug}`);
+    
+    navigate(`/details/${countrySlug}`);
   };
   
   return (
