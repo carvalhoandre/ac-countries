@@ -8,7 +8,7 @@ import { Header, Footer, Loader, Typography } from "../../components";
 import LineChart from "./components/LineChart";
 import * as styles from "./styles";
 
-const Details = ():JSX.Element => {
+const Details = (): JSX.Element => {
   const { loading, searchCountriesByName } = useCountries();
 
   const [countrie, setCountrie] = React.useState<ICountrie | null>(null);
@@ -16,9 +16,11 @@ const Details = ():JSX.Element => {
   const fechCountrie = async () => {
     const countrieName = window.location.pathname.split("&")[1];
 
-    if (countrieName.length < 1) return;
+    if (!countrieName) return;
 
-    const newCountrie = await searchCountriesByName(countrieName);
+    let formatedCountrie = countrieName.replace(/\-/g, " ");
+    
+    const newCountrie = await searchCountriesByName(formatedCountrie);
 
     setCountrie(newCountrie[0]);
   };

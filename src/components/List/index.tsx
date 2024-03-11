@@ -9,11 +9,9 @@ export const List = ({ countries }: IListProps): JSX.Element => {
   const navigate = useNavigate();
 
   const navigateToDetails = (countrie: string) => {
-    const countryNames = countrie.split(" ");
-    
-    const firstCountryName = countryNames.length > 1 ? countryNames[countryNames.length - 1] : countrie;
+    const countrySlug = countrie.replace(/ /g, "-");
   
-    navigate(`/details/&${firstCountryName}`);
+    navigate(`/details/&${countrySlug}`);
   };
   
   return (
