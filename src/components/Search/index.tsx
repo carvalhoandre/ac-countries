@@ -4,7 +4,7 @@ import { ISearchProps } from "./types";
 import useCountries from "../../hooks/countries";
 import { useStorage } from "../../hooks/storage/search";
 
-import { grey } from "../../styles/theme";
+import { fontWeight, grey } from "../../styles/theme";
 
 import { Typography } from "..";
 import * as styles from "./styles";
@@ -70,7 +70,7 @@ export const Search = ({ onChange }: ISearchProps): JSX.Element => {
       <styles.ButtonSearch onClick={handleSearch}>
         <Typography
           size="bg"
-          $weight={500}
+          $weight={fontWeight.medium}
           textAlign="center"
           color={grey.lightest}
         >

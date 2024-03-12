@@ -2,8 +2,10 @@ import { useNavigate } from "react-router-dom";
 
 import { IListProps } from "./types";
 
-import * as styles from "./styles";
+import { fontWeight } from "../../styles/theme";
+
 import { Typography } from "../Typography";
+import * as styles from "./styles";
 
 export const List = ({ countries }: IListProps): JSX.Element => {
   const navigate = useNavigate();
@@ -19,7 +21,7 @@ export const List = ({ countries }: IListProps): JSX.Element => {
       {countries.map((countrie, index) => (
         <styles.Card key={index} onClick={() => navigateToDetails(countrie.name.official)}>
           <styles.Row>
-            <Typography $weight={600} size="bg">
+            <Typography $weight={fontWeight.semiBold} size="bg">
               {countrie.name.official}
             </Typography>
 
@@ -31,13 +33,13 @@ export const List = ({ countries }: IListProps): JSX.Element => {
 
           <styles.Row>
             {countrie?.capital && (
-              <Typography $weight={300} size="md">
+              <Typography size="md">
                 {`Capital:  ${Object.values(countrie.capital).join(", ")}`}
               </Typography>
             )}
 
             {countrie?.capital && (
-              <Typography $weight={300} size="md">
+              <Typography size="md">
                 {`Idiomas:  ${Object.values(countrie.languages).join(", ")}`}
               </Typography>
             )}
@@ -45,14 +47,14 @@ export const List = ({ countries }: IListProps): JSX.Element => {
 
           <styles.Row>
             {Object.keys(countrie?.currencies || {}).map((currencyCode) => (
-              <Typography $weight={300} size="md" key={currencyCode}>
+              <Typography size="md" key={currencyCode}>
                 Moeda: {countrie?.currencies?.[currencyCode]?.name} (
                 {countrie?.currencies?.[currencyCode]?.symbol})
               </Typography>
             ))}
 
             {countrie.population && (
-              <Typography $weight={300} size="md">
+              <Typography size="md">
                 População {countrie.population}
               </Typography>
             )}

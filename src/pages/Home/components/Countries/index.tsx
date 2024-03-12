@@ -4,6 +4,7 @@ import { ICountrie } from "../../../../types/countries";
 
 import useCountries from "../../../../hooks/countries";
 
+import { fontWeight } from "../../../../styles/theme";
 import { Typography, Loader, Table, Search, List } from "../../../../components";
 
 import * as styles from "./styles";
@@ -31,7 +32,7 @@ const Countries = (): JSX.Element => {
         hasCountries && (
           <>
             <styles.IconsContainer>
-              <Typography size="md" $weight={500}>
+              <Typography size="md" $weight={fontWeight.medium}>
                 Visualização
               </Typography>
 

@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { fontSize, grey } from "../../styles/theme";
+import { fontSize, grey, fontWeight } from "../../styles/theme";
 
 const handleFontSize = (props: ITypographyProps): string => {
   switch (props.size) {
@@ -25,7 +25,7 @@ const handleFontSize = (props: ITypographyProps): string => {
 export const StyledTypography = styled.p<ITypographyProps>`
   font-size: ${handleFontSize};
   color: ${({ color }) => (color ? color : grey.darkest)};
-  font-weight: ${({ $weight }) => $weight};
+  font-weight: ${({ $weight }) => $weight ? $weight : fontWeight.light };
   text-transform: ${({ $isUppercase }) => $isUppercase && "uppercase"};
   text-align: ${({ textAlign }) => textAlign || ""};
   position: relative;

@@ -5,6 +5,8 @@ import { ICountrie } from "../../types/countries";
 
 import useCountries from "../../hooks/countries";
 
+import { fontWeight } from "../../styles/theme";
+
 import { Header, Footer, Loader, Typography } from "../../components";
 import LineChart from "./components/LineChart";
 
@@ -39,7 +41,7 @@ const Details = (): JSX.Element => {
         ) : (
           <styles.Container>
             <styles.Line>
-              <Typography $weight={theme.} size="xl" textAlign="center">
+              <Typography $weight={fontWeight.extraBold} size="xl" textAlign="center">
                 {countrie?.name.official}
               </Typography>
               <styles.FlagImage

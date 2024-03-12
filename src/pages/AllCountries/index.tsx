@@ -2,6 +2,8 @@ import React from "react";
 
 import useCountries from "../../hooks/countries";
 
+import { fontWeight } from "../../styles/theme";
+
 import { Header, Footer, Loader, List, Typography } from "../../components";
 import { Search } from "./components/Search";
 
@@ -34,7 +36,7 @@ const AllCountries = () => {
 
       <styles.Content>
         <styles.Container>
-          <Typography $weight={800} size="xl" textAlign="center">
+          <Typography $weight={fontWeight.extraBold} size="xl" textAlign="center">
             Descubra Novos países
           </Typography>
 

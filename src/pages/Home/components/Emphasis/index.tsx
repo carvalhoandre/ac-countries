@@ -1,6 +1,6 @@
 import TheWorld from "../../../../assets/unDraw/around_the_world.svg";
 import { Typography } from "../../../../components/Typography";
-import { grey } from "../../../../styles/theme";
+import { fontWeight, grey } from "../../../../styles/theme";
 
 import * as styles from "./styles";
 
@@ -10,7 +10,7 @@ const Emphasis = (): JSX.Element => {
       <styles.Info>
         <Typography
           size="bg"
-          $weight={700}
+          $weight={fontWeight.bold}
           textAlign="center"
           color={grey.lightest}
         >
@@ -20,11 +20,11 @@ const Emphasis = (): JSX.Element => {
 
       <styles.Container>
         <styles.ContainerText>
-          <Typography size="xxl" $weight={900}>
+          <Typography size="xxl" $weight={fontWeight.black}>
             Descubra Milhares de países
           </Typography>
 
-          <Typography $weight={300}>
+          <Typography>
             Explore o mundo buscando países em nosso marketplace
           </Typography>
         </styles.ContainerText>

@@ -1,6 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
+import { fontWeight } from "../../styles/theme";
+
 import { Typography } from "../Typography";
 
 import Logo from "../../assets/ac-logo.svg";
@@ -15,7 +17,7 @@ export const Header: React.FC = () => {
           <styles.LogoComponent src={Logo} alt="AC-Logo" />
         </Link>
 
-        <Typography size="md" $weight={500} $isUppercase>
+        <Typography size="md" $weight={fontWeight.medium} $isUppercase>
           AC Countries
         </Typography>
       </styles.Container>
