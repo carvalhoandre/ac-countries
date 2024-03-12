@@ -8,10 +8,13 @@ import { Header, Footer, Loader, List, Typography } from "../../components";
 import { Search } from "./components/Search";
 
 import * as styles from "./styles";
+import { ICountrie } from "../../types/countries";
 
 const AllCountries = () => {
-  const { countries, loading, fechCountries } = useCountries();
+  const { fechCountries } = useCountries();
 
+  const [loading, setLoading] = React.useState(false);
+  const [countries, setCountries] = React.useState<Array<ICountrie>>([]);
   const [search, setSearch] = React.useState("");
 
   const filteredCountries =
@@ -27,8 +30,22 @@ const AllCountries = () => {
     filteredCountries.length > 0 ? filteredCountries : countries;
 
   React.useEffect(() => {
-    fechCountries();
+    const fetchData = async () => {
+      if (countries.length > 0) return;
+
+      setLoading(true);
+
+      const newCountrie = await fechCountries();
+
+      setCountries(newCountrie);
+
+      setLoading(false);
+    };
+
+    fetchData();
   }, []);
+
+  if (loading || viewCountries.length < 1) return <Loader isFullScreen />;
 
   return (
     <>
@@ -36,19 +53,17 @@ const AllCountries = () => {
 
       <styles.Content>
         <styles.Container>
-          <Typography $weight={fontWeight.extraBold} size="xl" $textAlign="center">
+          <Typography
+            $weight={fontWeight.extraBold}
+            size="xl"
+            $textAlign="center"
+          >
             Descubra Novos países
           </Typography>
 
-          {loading && viewCountries.length < 1 ? (
-            <Loader />
-          ) : (
-            <>
-              <Search onChange={setSearch} />
-              
-              <List countries={viewCountries} />
-            </>
-          )}
+          <Search onChange={setSearch} />
+
+          <List countries={viewCountries} />
         </styles.Container>
 
         <Footer />

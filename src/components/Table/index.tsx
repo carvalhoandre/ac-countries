@@ -1,6 +1,7 @@
 import { useNavigate } from "react-router-dom";
 
 import { ITableProps } from "./types";
+import { formatNumber } from "../../helpers/numbers";
 
 import {
   TableCell,
@@ -20,8 +21,8 @@ export const Table = ({ countries }: ITableProps): JSX.Element => {
 
   const navigateToDetails = (countrie: string) => {
     const countrySlug = countrie.replace(/ /g, "-");
-  
-    navigate(`/details/&${countrySlug}`);
+
+    navigate(`/details/${countrySlug}`);
   };
 
   return (
@@ -119,7 +120,7 @@ export const Table = ({ countries }: ITableProps): JSX.Element => {
                     )
                   )}
                 </TableCell>
-                <TableCell>{countrie?.population}</TableCell>
+                <TableCell>{formatNumber(countrie.population)}</TableCell>
               </TableRow>
             );
           })}

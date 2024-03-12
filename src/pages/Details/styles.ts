@@ -11,12 +11,27 @@ export const Container = styled.div`
   display: flex;
   flex-direction: column;
   gap: 5rem;
-  padding: 2rem 4rem;
+  width: 100%;
+  padding: 2rem 0;
 
   justify-content: center;
 
   @media (max-width: 700px) {
-    padding: 2rem;
+    padding: 2rem 1rem;
+    gap: 2rem;
+  }
+`;
+
+export const ContainerInformations = styled.div`
+  display: flex;
+  gap: 1rem;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+
+  @media (max-width: 700px) {
+    flex-direction: column;
+    gap: 2rem;
   }
 `;
 

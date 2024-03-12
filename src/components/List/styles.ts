@@ -54,6 +54,11 @@ export const Row = styled.div`
   width: 100%;
 `;
 
+export const Information = styled.div`
+  display: flex;
+  gap: 0.5rem;
+`;
+
 export const FlagImage = styled.img`
   width: 50px;
   height: auto;

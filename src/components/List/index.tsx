@@ -1,6 +1,7 @@
 import { useNavigate } from "react-router-dom";
 
 import { IListProps } from "./types";
+import { formatNumber } from "../../helpers/numbers";
 
 import { fontWeight } from "../../styles/theme";
 
@@ -12,14 +13,17 @@ export const List = ({ countries }: IListProps): JSX.Element => {
 
   const navigateToDetails = (countrie: string) => {
     const countrySlug = countrie.replace(/ /g, "-");
-    
+
     navigate(`/details/${countrySlug}`);
   };
-  
+
   return (
     <styles.Column>
       {countries.map((countrie, index) => (
-        <styles.Card key={index} onClick={() => navigateToDetails(countrie.name.official)}>
+        <styles.Card
+          key={index}
+          onClick={() => navigateToDetails(countrie.name.official)}
+        >
           <styles.Row>
             <Typography $weight={fontWeight.semiBold} size="bg">
               {countrie.name.official}
@@ -33,30 +37,52 @@ export const List = ({ countries }: IListProps): JSX.Element => {
 
           <styles.Row>
             {countrie?.capital && (
-              <Typography size="md">
-                {`Capital:  ${Object.values(countrie.capital).join(", ")}`}
-              </Typography>
+              <styles.Information>
+                <Typography size="md" $weight={fontWeight.medium}>
+                  Capital:
+                </Typography>
+
+                <Typography size="md">
+                  {Object.values(countrie.capital).join(", ")}
+                </Typography>
+              </styles.Information>
             )}
 
             {countrie?.capital && (
-              <Typography size="md">
-                {`Idiomas:  ${Object.values(countrie.languages).join(", ")}`}
-              </Typography>
+              <styles.Information>
+                <Typography size="md" $weight={fontWeight.medium}>
+                  Idiomas:
+                </Typography>
+
+                <Typography size="md">
+                  {Object.values(countrie.languages).join(", ")}
+                </Typography>
+              </styles.Information>
             )}
           </styles.Row>
 
           <styles.Row>
-            {Object.keys(countrie?.currencies || {}).map((currencyCode) => (
-              <Typography size="md" key={currencyCode}>
-                Moeda: {countrie?.currencies?.[currencyCode]?.name} (
-                {countrie?.currencies?.[currencyCode]?.symbol})
+            <styles.Information>
+              <Typography size="md" $weight={fontWeight.medium}>
+                Moeda:
               </Typography>
-            ))}
+
+              {Object.keys(countrie?.currencies || {}).map((currencyCode) => (
+                <Typography size="md">
+                  {countrie?.currencies?.[currencyCode]?.name} (
+                  {countrie?.currencies?.[currencyCode]?.symbol})
+                </Typography>
+              ))}
+            </styles.Information>
 
             {countrie.population && (
-              <Typography size="md">
-                População {countrie.population}
-              </Typography>
+              <styles.Information>
+                <Typography size="md" $weight={fontWeight.medium}>
+                  População:
+                </Typography>
+
+                <Typography size="md">{formatNumber(countrie.population)}</Typography>
+              </styles.Information>
             )}
           </styles.Row>
         </styles.Card>

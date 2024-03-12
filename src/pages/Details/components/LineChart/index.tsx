@@ -1,20 +1,21 @@
 import Chart from "react-apexcharts";
 import { IPropsLineChart } from "./types";
-import { grey } from "../../../../styles/theme";
+import { formatNumber } from "../../../../helpers/numbers";
+import { fontSize, fontWeight, grey } from "../../../../styles/theme";
 
- const LineChart = ({ countrie }: IPropsLineChart): JSX.Element => {
+export const LineChart = ({ countrie }: IPropsLineChart): JSX.Element => {
   const state = {
     series: [
       {
-        name: countrie?.name?.official || 'País',
+        name: countrie?.name?.official || "País",
         data: [
           {
             x: "População",
-            y: countrie?.population || 0,
+            y: formatNumber(countrie.population) || 0,
           },
           {
             x: "Área",
-            y: countrie?.area || 0,
+            y: formatNumber(countrie?.area) || 0,
           },
         ],
       },
@@ -38,8 +39,8 @@ import { grey } from "../../../../styles/theme";
           type: "category",
           group: {
             style: {
-              fontSize: "12px",
-              fontWeight: 700,
+              fontSize: fontSize.default,
+              fontWeight: fontWeight.regular,
               fontColor: grey.darkest,
             },
           },
@@ -57,5 +58,3 @@ import { grey } from "../../../../styles/theme";
     />
   );
 };
-
-export default LineChart;

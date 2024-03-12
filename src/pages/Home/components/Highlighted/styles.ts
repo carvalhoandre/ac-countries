@@ -2,21 +2,16 @@ import styled from "styled-components";
 import { Link } from "react-router-dom";
 import { palette } from "../../../../styles/theme";
 
+
 export const Container = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 20px;
-`;
-
-export const TextContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-
+  width: 100%;
   justify-content: center;
   background-color: ${palette.primary.default};
-  padding: 20px;
+  padding: 1.25rem;
+  gap: 0.5rem;
   border-radius: 10px;
   text-align: center;
 `;
@@ -36,12 +31,9 @@ export const DiscoverButton = styled(Link)`
   margin-top: 20px;
   padding: 10px 20px;
   background-color: ${palette.grey.white};
-  color: ${palette.primary.default};
   text-decoration: none;
   border-radius: 5px;
-  font-size: 1.2rem;
   transition: background-color 0.3s ease;
-
   max-width: 30%;
 
   &:hover {

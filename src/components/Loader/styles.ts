@@ -1,10 +1,19 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
+import { ILoaderProps } from "./types";
 
-export const Container = styled.div`
+export const Container = styled.div<ILoaderProps>`
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
   gap: 5px;
   align-items: center;
+  justify-content: center;
   margin: auto;
+
+  ${({ isFullScreen }) =>
+    isFullScreen &&
+    css`
+      width: 100vw;
+      height: 100vh;
+    `}
 `;

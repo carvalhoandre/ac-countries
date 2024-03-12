@@ -4,7 +4,6 @@ import { grey } from "../../styles/theme";
 export const Footer = styled.footer`
   row-gap: 2em;
   border-top: 1px solid ${grey.lighter};
-  margin-top: 2.5rem;
 `;
 
 export const Content = styled.div`
