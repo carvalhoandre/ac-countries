@@ -10,6 +10,7 @@ export const Container = styled.div`
   border-radius: 0.5em;
   padding: 0.4em 0.9em;
   width: 30%;
+  background-color: ${grey.white};
 
   @media screen and (max-width: 767px) {
     width: 80%;

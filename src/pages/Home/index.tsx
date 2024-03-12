@@ -1,8 +1,7 @@
 import { Header, Footer } from "../../components";
-import Emphasis from "./components/Emphasis";
 
+import { Countries, Emphasis } from "./components";
 import * as styles from "./styles";
-import Countries from "./components/Countries";
 
 const Home = () => {
   return (

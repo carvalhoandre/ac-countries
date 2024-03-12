@@ -5,5 +5,5 @@ interface ITypographyProps {
   $weight?: number;
   $isUppercase?: boolean;
   color?: string;
-  textAlign?: string;
+  $textAlign?: string;
 }

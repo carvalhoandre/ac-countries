@@ -10,10 +10,11 @@ const NotFound = () => {
       <Header />
 
       <styles.Container>
-        <Typography size="bg" $weight={fontWeight.medium}>
+        <styles.Image src={NotFoundImage} alt="Imagem_Ilustrativa" />
+       
+        <Typography size="xxl" $weight={fontWeight.medium}>
           404: Nada por aqui
         </Typography>
-        <styles.Image src={NotFoundImage} alt="Imagem_Ilustrativa" />
       </styles.Container>
     </>
   );

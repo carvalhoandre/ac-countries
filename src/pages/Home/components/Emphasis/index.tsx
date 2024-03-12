@@ -4,14 +4,14 @@ import { fontWeight, grey } from "../../../../styles/theme";
 
 import * as styles from "./styles";
 
-const Emphasis = (): JSX.Element => {
+export const Emphasis = (): JSX.Element => {
   return (
     <>
       <styles.Info>
         <Typography
           size="bg"
           $weight={fontWeight.bold}
-          textAlign="center"
+          $textAlign="center"
           color={grey.lightest}
         >
           Em construção
@@ -34,5 +34,3 @@ const Emphasis = (): JSX.Element => {
     </>
   );
 };
-
-export default Emphasis;

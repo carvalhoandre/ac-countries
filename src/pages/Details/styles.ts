@@ -14,6 +14,10 @@ export const Container = styled.div`
   padding: 2rem 4rem;
 
   justify-content: center;
+
+  @media (max-width: 700px) {
+    padding: 2rem;
+  }
 `;
 
 export const FlagImage = styled.img`

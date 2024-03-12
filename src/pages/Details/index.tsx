@@ -41,7 +41,7 @@ const Details = (): JSX.Element => {
         ) : (
           <styles.Container>
             <styles.Line>
-              <Typography $weight={fontWeight.extraBold} size="xl" textAlign="center">
+              <Typography $weight={fontWeight.extraBold} size="xl" $textAlign="center">
                 {countrie?.name.official}
               </Typography>
               <styles.FlagImage

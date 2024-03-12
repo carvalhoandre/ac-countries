@@ -71,7 +71,7 @@ export const Search = ({ onChange }: ISearchProps): JSX.Element => {
         <Typography
           size="bg"
           $weight={fontWeight.medium}
-          textAlign="center"
+          $textAlign="center"
           color={grey.lightest}
         >
           Explorar

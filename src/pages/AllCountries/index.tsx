@@ -36,7 +36,7 @@ const AllCountries = () => {
 
       <styles.Content>
         <styles.Container>
-          <Typography $weight={fontWeight.extraBold} size="xl" textAlign="center">
+          <Typography $weight={fontWeight.extraBold} size="xl" $textAlign="center">
             Descubra Novos países
           </Typography>
 

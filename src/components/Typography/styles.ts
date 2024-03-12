@@ -27,6 +27,6 @@ export const StyledTypography = styled.p<ITypographyProps>`
   color: ${({ color }) => (color ? color : grey.darkest)};
   font-weight: ${({ $weight }) => $weight ? $weight : fontWeight.light };
   text-transform: ${({ $isUppercase }) => $isUppercase && "uppercase"};
-  text-align: ${({ textAlign }) => textAlign || ""};
+  text-align: ${({ $textAlign }) => $textAlign || ""};
   position: relative;
 `;

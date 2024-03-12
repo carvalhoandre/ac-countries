@@ -5,7 +5,6 @@ export const Content = styled.div`
   flex-direction: column;
   justify-content: space-between;
 
-  height: calc(90vh - 10px);
 `;
 
 export const Container = styled.div`
