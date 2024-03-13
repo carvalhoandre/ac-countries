@@ -36,7 +36,7 @@ export const ContainerInformations = styled.div`
 `;
 
 export const FlagImage = styled.img`
-  width: 50px;
+  width: 3rem;
   height: auto;
 `;
 

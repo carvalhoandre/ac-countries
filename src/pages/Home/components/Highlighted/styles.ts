@@ -28,8 +28,8 @@ export const IllustrationImage = styled.img`
 `;
 
 export const DiscoverButton = styled(Link)`
-  margin-top: 20px;
-  padding: 10px 20px;
+  margin-top: 1.25rem;
+  padding: 0.6rem 1.25rem;
   background-color: ${palette.grey.white};
   text-decoration: none;
   border-radius: 5px;

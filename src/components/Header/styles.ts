@@ -6,14 +6,14 @@ export const Header = styled.header`
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
-  padding: 10px;
+  padding: 0.6rem;
 
   background: ${grey.white};
 `;
 
 export const LogoComponent = styled.img`
-  width: 50px;
-  height: 50px;
+  width: 3rem;
+  height: 3rem;
   display: block;
 `;
 
@@ -21,6 +21,6 @@ export const Container = styled.div`
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
-  gap: 5px;
+  gap: 0.3rem;
   align-items: center;
 `;

@@ -49,8 +49,8 @@ export const History = styled.div`
   width: 14.8rem;
   padding: 0.5rem 1rem;
   position: absolute;
-  top: 33px;
-  left: 0px;
+  top: 2rem;
+  left: 0rem;
   z-index: 100;
 
   @media screen and (max-width: 767px) {
@@ -79,5 +79,5 @@ export const ButtonHistory = styled.button`
   cursor: pointer;
   background-color: ${grey.white};
   border: none;
-  padding: 2px;
+  padding: 0.12rem;
 `;

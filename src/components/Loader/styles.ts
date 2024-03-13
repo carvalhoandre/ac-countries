@@ -5,7 +5,7 @@ export const Container = styled.div<ILoaderProps>`
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
-  gap: 5px;
+  gap: 0.5rem;
   align-items: center;
   justify-content: center;
   margin: auto;

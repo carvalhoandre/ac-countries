@@ -25,19 +25,19 @@ export const TableRow = styled.tr`
 `;
 
 export const TableCell = styled.td`
-  padding: 8px;
+  padding: 0.5rem;
   border: 1px solid ${grey.default};
   text-align: left;
 `;
 
 export const TableHeaderCell = styled.th`
-  padding: 8px;
+  padding: 0.5rem;
   border: 1px solid ${grey.default};
   text-align: left;
 `;
 
 export const FlagImage = styled.img`
-  width: 50px;
+  width: 3rem;
   height: auto;
 `;
 
