@@ -6,7 +6,7 @@ import { useStorage } from "../../hooks/storage/search";
 
 import { fontWeight, grey } from "../../styles/theme";
 
-import { Typography } from "..";
+import { Loader, Typography } from "..";
 import * as styles from "./styles";
 
 export const Search = ({ onChange }: ISearchProps): JSX.Element => {
@@ -14,10 +14,13 @@ export const Search = ({ onChange }: ISearchProps): JSX.Element => {
   const { setSearchStorage, getSearchStorage } = useStorage();
 
   const [search, setSearch] = React.useState("");
+  const [loading, setLoading] = React.useState(false);
   const [isHistoryVisible, setHistoryVisible] = React.useState(false);
   const historySearch = getSearchStorage();
 
   const handleSearch = async () => {
+    setLoading(true)
+    
     if (historySearch) setHistoryVisible(false);
 
     const countriesResult = await searchCountriesByName(search);
@@ -27,6 +30,8 @@ export const Search = ({ onChange }: ISearchProps): JSX.Element => {
     onChange(countriesResult);
 
     setSearchStorage(search);
+
+    setLoading(false)
   };
 
   const handleInputFocus = () => {
@@ -38,6 +43,8 @@ export const Search = ({ onChange }: ISearchProps): JSX.Element => {
 
     setSearch(searchItem);
   };
+
+  if (loading) return <Loader />
 
   return (
     <styles.Container>

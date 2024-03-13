@@ -1,24 +1,21 @@
 import React from "react";
 
+import { View } from "../ActionsIcon/types";
 import { ICountrie } from "../../../../types/countries";
 
-import useCountries from "../../../../hooks/countries";
-
-import { fontWeight } from "../../../../styles/theme";
-
-import { Typography, Loader, Table, Search, List } from "../../../../components";
+import { Table, Search, List } from "../../../../components";
 import { Highlighted } from "../Highlighted";
+import { ActionsIcon } from "../ActionsIcon";
 
 import * as styles from "./styles";
 
 export const Countries = (): JSX.Element => {
-  const { loading } = useCountries();
   const [countries, setCountries] = React.useState<Array<ICountrie> | []>([]);
-  const [view, setView] = React.useState<"card" | "table">("table");
+  const [view, setView] = React.useState<View>("table");
 
   const hasCountries = countries.length > 0;
 
-  const handleUpdateView = (newView: "card" | "table") => {
+  const handleUpdateView = (newView: View) => {
     if (newView === view) return;
 
     setView(newView);
@@ -28,42 +25,18 @@ export const Countries = (): JSX.Element => {
     <styles.Container>
       <Search onChange={setCountries} />
 
-      {loading ? (
-        <Loader />
-      ) : (
+      {hasCountries ? (
         <>
-          {hasCountries ? (
-            <>
-              <styles.IconsContainer>
-                <Typography size="md" $weight={fontWeight.medium}>
-                  Visualização
-                </Typography>
+          <ActionsIcon view={view} handleUpdateView={handleUpdateView} />
 
-                <div onClick={() => handleUpdateView("table")}>
-                  <styles.Icon selected={view === "table"}>
-                    <i className="uil-list-ul" />
-                    <Typography size="sm">Tabela</Typography>
-                  </styles.Icon>
-                </div>
-
-                <div onClick={() => handleUpdateView("card")}>
-                  <styles.Icon selected={view === "card"}>
-                    <i className="uil-card-atm" />
-                    <Typography size="sm">Card</Typography>
-                  </styles.Icon>
-                </div>
-              </styles.IconsContainer>
-
-              {view === "table" ? (
-                <Table countries={countries} />
-              ) : (
-                <List countries={countries} />
-              )}
-            </>
+          {view === "table" ? (
+            <Table countries={countries} />
           ) : (
-            <Highlighted />
+            <List countries={countries} />
           )}
         </>
+      ) : (
+        <Highlighted />
       )}
     </styles.Container>
   );
