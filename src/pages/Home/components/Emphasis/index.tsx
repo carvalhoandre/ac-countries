@@ -14,19 +14,17 @@ export const Emphasis = (): JSX.Element => {
           $textAlign="center"
           color={grey.lightest}
         >
-          Em construção
+          Em Desenvolvimento
         </Typography>
       </styles.Info>
 
       <styles.Container>
         <styles.ContainerText>
           <Typography size="xxl" $weight={fontWeight.black}>
-            Descubra Milhares de países
+            Explore uma Diversidade de Países
           </Typography>
 
-          <Typography>
-            Explore o mundo buscando países em nosso marketplace
-          </Typography>
+          <Typography>Descubra Novos Destinos em Nosso Marketplace</Typography>
         </styles.ContainerText>
 
         <styles.Image src={TheWorld} alt="Imagem_Ilustrativa" />

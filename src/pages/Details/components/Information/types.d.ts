@@ -1,5 +1,4 @@
-import { ICountrie } from "../../../../../../types/countries";
-
-interface IInformationProps {
-  countrie: ICountrie;
+export interface IInformationProps {
+  title: string;
+  text: string;
 }

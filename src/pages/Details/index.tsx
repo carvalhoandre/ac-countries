@@ -8,7 +8,7 @@ import useCountries from "../../hooks/countries";
 import { fontWeight } from "../../styles/theme";
 
 import { Header, Footer, Loader, Typography } from "../../components";
-import { LineChart, Information } from "./components";
+import { LineChart, Informations } from "./components";
 
 import * as styles from "./styles";
 
@@ -65,8 +65,12 @@ const Details = (): JSX.Element => {
             />
           </styles.Line>
 
+          <Typography $weight={fontWeight.medium} size="lg" $textAlign="center">
+            Informações Principais:
+          </Typography>
+
           <styles.ContainerInformations>
-            <Information countrie={countrie} />
+            <Informations countrie={countrie} />
 
             <LineChart countrie={countrie} />
           </styles.ContainerInformations>

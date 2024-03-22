@@ -3,7 +3,7 @@ import { IPropsLineChart } from "./types";
 import { formatNumber } from "../../../../helpers/numbers";
 import { fontSize, fontWeight, grey } from "../../../../styles/theme";
 
-export const LineChart = ({ countrie }: IPropsLineChart): JSX.Element => {
+const LineChart = ({ countrie }: IPropsLineChart): JSX.Element => {
   const state = {
     series: [
       {
@@ -23,7 +23,7 @@ export const LineChart = ({ countrie }: IPropsLineChart): JSX.Element => {
     options: {
       colors: grey.darkest,
       chart: {
-        height: 350,
+        height: 500,
         type: "bar",
         zoom: {
           enabled: false,
@@ -33,7 +33,7 @@ export const LineChart = ({ countrie }: IPropsLineChart): JSX.Element => {
       options: {
         chart: {
           type: "bar",
-          height: 380,
+          height: 500,
         },
         xaxis: {
           type: "category",
@@ -53,8 +53,11 @@ export const LineChart = ({ countrie }: IPropsLineChart): JSX.Element => {
     <Chart
       options={{ ...state }}
       series={state.series}
-      height="240"
+      height="300px"
+      width="350px"
       type="bar"
     />
   );
 };
+
+export default LineChart;

@@ -25,35 +25,27 @@ export const Table = ({ countries }: ITableProps): JSX.Element => {
     navigate(`/details/${countrySlug}`);
   };
 
+  const titles = [
+    "País",
+    "Bandeira",
+    "Capital",
+    "Região",
+    "Idiomas",
+    "Links Mapas",
+    "Moeda",
+    "População",
+  ];
+  
   return (
     <TableContainer>
       <TableStyled>
         <TableHead>
           <TableRow>
-            <TableHeaderCell>
-              <Typography>País</Typography>
-            </TableHeaderCell>
-            <TableHeaderCell>
-              <Typography>Bandeira</Typography>
-            </TableHeaderCell>
-            <TableHeaderCell>
-              <Typography>Capital</Typography>
-            </TableHeaderCell>
-            <TableHeaderCell>
-              <Typography>Região</Typography>
-            </TableHeaderCell>
-            <TableHeaderCell>
-              <Typography>Idiomas</Typography>
-            </TableHeaderCell>
-            <TableHeaderCell>
-              <Typography>Links Mapas</Typography>
-            </TableHeaderCell>
-            <TableHeaderCell>
-              <Typography>Moeda</Typography>
-            </TableHeaderCell>
-            <TableHeaderCell>
-              <Typography>População</Typography>
-            </TableHeaderCell>
+            {titles.map((title, index) => (
+              <TableHeaderCell key={index}>
+                <Typography>{title}</Typography>
+              </TableHeaderCell>
+            ))}
           </TableRow>
         </TableHead>
 

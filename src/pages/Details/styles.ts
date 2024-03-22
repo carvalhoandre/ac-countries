@@ -10,9 +10,9 @@ export const Content = styled.div`
 export const Container = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 5rem;
+  gap: 4rem;
   width: 100%;
-  padding: 2rem 0;
+  padding: 3rem 0;
 
   justify-content: center;
 
@@ -24,14 +24,14 @@ export const Container = styled.div`
 
 export const ContainerInformations = styled.div`
   display: flex;
-  gap: 1rem;
+  gap: 2rem;
   width: 100%;
   justify-content: center;
   align-items: center;
-
+  
   @media (max-width: 700px) {
     flex-direction: column;
-    gap: 2rem;
+    align-items: flex-start;
   }
 `;
 
