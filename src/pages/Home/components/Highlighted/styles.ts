@@ -14,6 +14,8 @@ export const Container = styled.div`
   gap: 0.5rem;
   border-radius: 10px;
   text-align: center;
+
+  max-width: 50%;
 `;
 
 export const IllustrationImage = styled.img`

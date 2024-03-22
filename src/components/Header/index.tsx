@@ -9,7 +9,7 @@ import Logo from "../../assets/ac-logo.svg";
 
 import * as styles from "./styles";
 
-export const Header: React.FC = () => {
+ const Header: React.FC = () => {
   return (
     <styles.Header>
       <styles.Container>
@@ -24,3 +24,5 @@ export const Header: React.FC = () => {
     </styles.Header>
   );
 };
+
+export default Header;
