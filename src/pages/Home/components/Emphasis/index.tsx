@@ -27,7 +27,7 @@ export const Emphasis = (): JSX.Element => {
           <Typography>Descubra Novos Destinos em Nosso Marketplace</Typography>
         </styles.ContainerText>
 
-        <styles.Image src={TheWorld} alt="Imagem_Ilustrativa" />
+        <styles.Image src={TheWorld} alt="Imagem Representativa" />
       </styles.Container>
     </>
   );
