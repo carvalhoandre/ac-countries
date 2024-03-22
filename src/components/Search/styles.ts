@@ -4,7 +4,7 @@ import { grey, primary } from "../../styles/theme";
 export const Container = styled.div`
   display: flex;
   flex-direction: row;
-  gap: 0.5em;
+  gap: 1em;
   align-items: center;
 `;
 
@@ -68,6 +68,11 @@ export const ButtonSearch = styled.button`
 
   &:hover {
     background-color: ${primary.light};
+  }
+  
+  &:disabled {
+    background-color: ${primary.lighter};
+    cursor: not-allowed;
   }
 
   @media screen and (max-width: 767px) {

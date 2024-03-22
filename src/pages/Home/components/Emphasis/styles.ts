@@ -13,10 +13,6 @@ export const Container = styled.section`
     display: flex;
     flex-direction: row;
   }
-
-  @media screen and (max-width: 768px) {
-    margin-top: 1em;
-  }
 `;
 
 export const ContainerText = styled.div`

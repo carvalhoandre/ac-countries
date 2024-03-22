@@ -2,7 +2,6 @@ import styled from "styled-components";
 import { Link } from "react-router-dom";
 import { palette } from "../../../../styles/theme";
 
-
 export const Container = styled.div`
   display: flex;
   flex-direction: column;
@@ -15,7 +14,9 @@ export const Container = styled.div`
   border-radius: 10px;
   text-align: center;
 
-  max-width: 50%;
+  @media screen and (min-width: 1080px) {
+    max-width: 50%;
+  }
 `;
 
 export const IllustrationImage = styled.img`

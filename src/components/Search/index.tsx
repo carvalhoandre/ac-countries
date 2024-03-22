@@ -74,7 +74,7 @@ export const Search = ({ onChange }: ISearchProps): JSX.Element => {
         )}
       </styles.Search>
 
-      <styles.ButtonSearch onClick={handleSearch}>
+      <styles.ButtonSearch onClick={handleSearch} disabled={!search}>
         <Typography
           size="bg"
           $weight={fontWeight.medium}
