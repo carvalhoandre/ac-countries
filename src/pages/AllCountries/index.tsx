@@ -45,7 +45,7 @@ const AllCountries = () => {
     fetchData();
   }, []);
 
-  if (loading || viewCountries.length < 1) return <Loader isFullScreen />;
+  if (loading || viewCountries.length < 1) return <Loader $isFullScreen />;
 
   return (
     <>

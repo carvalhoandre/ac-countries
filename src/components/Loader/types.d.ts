@@ -1,3 +1,3 @@
 export interface ILoaderProps {
-  isFullScreen?: boolean;
+  $isFullScreen?: boolean;
 }

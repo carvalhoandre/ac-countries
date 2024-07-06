@@ -10,8 +10,8 @@ export const Container = styled.div<ILoaderProps>`
   justify-content: center;
   margin: auto;
 
-  ${({ isFullScreen }) =>
-    isFullScreen &&
+  ${({ $isFullScreen }) =>
+    $isFullScreen &&
     css`
       width: 100vw;
       height: 100vh;

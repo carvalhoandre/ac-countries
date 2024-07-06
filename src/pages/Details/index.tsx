@@ -42,7 +42,7 @@ const Details = (): JSX.Element => {
     fetchData();
   }, []);
 
-  if (loading || !countrie) return <Loader isFullScreen />;
+  if (loading || !countrie) return <Loader $isFullScreen />;
 
   return (
     <>
