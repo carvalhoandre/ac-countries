@@ -1,4 +1,5 @@
 import React from "react";
+
 import { ISearchProps } from "./types";
 
 import useCountries from "../../hooks/countries";
@@ -19,19 +20,17 @@ export const Search = ({ onChange }: ISearchProps): JSX.Element => {
   const historySearch = getSearchStorage();
 
   const handleSearch = async () => {
-    setLoading(true)
-    
+    setLoading(true);
+
     if (historySearch) setHistoryVisible(false);
 
     const countriesResult = await searchCountriesByName(search);
-
-    if (countriesResult.length === 0) return;
 
     onChange(countriesResult);
 
     setSearchStorage(search);
 
-    setLoading(false)
+    setLoading(false);
   };
 
   const handleInputFocus = () => {
@@ -44,7 +43,7 @@ export const Search = ({ onChange }: ISearchProps): JSX.Element => {
     setSearch(searchItem);
   };
 
-  if (loading) return <Loader />
+  if (loading) return <Loader />;
 
   return (
     <styles.Container>

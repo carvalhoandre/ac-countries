@@ -25,12 +25,13 @@ const useCountries = () => {
     try {
       const response = await getCountriesByName(name);
 
-      if (response.status !== 200 || response.data.length === 0)
-        throw new Error();
+      if (response.status !== 200) throw new Error();
 
       return response.data;
     } catch (e: any) {
-      toast("Nenhum país encontrado", { progress: 1 });
+      toast(`Buscamos por ${name} e não encontramos países correspondentes`, {
+        progress: 1,
+      });
 
       return [];
     }
