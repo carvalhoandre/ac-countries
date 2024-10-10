@@ -1,4 +1,3 @@
-import TheWorld from "../../../../assets/unDraw/around_the_world.svg";
 import { Typography } from "../../../../components/Typography";
 import { fontWeight, grey } from "../../../../styles/theme";
 
@@ -21,13 +20,13 @@ export const Emphasis = (): JSX.Element => {
       <styles.Container>
         <styles.ContainerText>
           <Typography size="xxl" $weight={fontWeight.black}>
-            Explore uma Diversidade de Países
+            Explore Diversidade de Países
           </Typography>
 
-          <Typography>Descubra Novos Destinos em Nosso Marketplace</Typography>
+          <Typography size="xl">
+            Descubra Novos Destinos em Nosso Marketplace
+          </Typography>
         </styles.ContainerText>
-
-        <styles.Image src={TheWorld} alt="Imagem Representativa" />
       </styles.Container>
     </>
   );

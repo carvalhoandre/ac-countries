@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import { grey } from "../../styles/theme";
 
 export const Header = styled.header`
   display: flex;
@@ -8,7 +7,7 @@ export const Header = styled.header`
   align-items: center;
   padding: 0.6rem;
 
-  background: ${grey.white};
+  background: #fcfcfc;
 `;
 
 export const LogoComponent = styled.img`

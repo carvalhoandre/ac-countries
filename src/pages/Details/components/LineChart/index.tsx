@@ -2,9 +2,10 @@ import Chart from "react-apexcharts";
 import { IPropsLineChart } from "./types";
 import { formatNumber } from "../../../../helpers/numbers";
 import { fontSize, fontWeight, grey } from "../../../../styles/theme";
+import { ApexOptions } from "apexcharts"; // Import ApexOptions type
 
 const LineChart = ({ countrie }: IPropsLineChart): JSX.Element => {
-  const state = {
+  const state: { series: any[]; options: ApexOptions } = {
     series: [
       {
         name: countrie?.name?.official || "País",
@@ -21,40 +22,87 @@ const LineChart = ({ countrie }: IPropsLineChart): JSX.Element => {
       },
     ],
     options: {
-      colors: grey.darkest,
+      colors: [grey.darkest],
       chart: {
-        height: 500,
         type: "bar",
+        height: "auto",
+        width: "100%",
         zoom: {
           enabled: false,
         },
-      },
-
-      options: {
-        chart: {
-          type: "bar",
-          height: 500,
+        toolbar: {
+          show: false,
         },
-        xaxis: {
-          type: "category",
-          group: {
-            style: {
-              fontSize: fontSize.default,
-              fontWeight: fontWeight.regular,
-              fontColor: grey.darkest,
-            },
+      },
+      plotOptions: {
+        bar: {
+          horizontal: false,
+          columnWidth: "50%",
+        },
+      },
+      xaxis: {
+        type: "category",
+        labels: {
+          style: {
+            fontSize: fontSize.default,
+            fontWeight: fontWeight.regular,
+            colors: [grey.darkest],
           },
         },
       },
+      responsive: [
+        {
+          breakpoint: 1024,
+          options: {
+            chart: {
+              width: "100%",
+              height: "auto",
+            },
+            plotOptions: {
+              bar: {
+                columnWidth: "60%",
+              },
+            },
+            xaxis: {
+              labels: {
+                style: {
+                  fontSize: fontSize.small,
+                },
+              },
+            },
+          },
+        },
+        {
+          breakpoint: 768,
+          options: {
+            chart: {
+              width: "100%",
+              height: "auto",
+            },
+            plotOptions: {
+              bar: {
+                columnWidth: "70%",
+              },
+            },
+            xaxis: {
+              labels: {
+                style: {
+                  fontSize: fontSize.small,
+                },
+              },
+            },
+          },
+        },
+      ],
     },
   };
 
   return (
     <Chart
-      options={{ ...state }}
+      options={state.options}
       series={state.series}
-      height="300px"
-      width="350px"
+      height="100%"
+      width="100%"
       type="bar"
     />
   );

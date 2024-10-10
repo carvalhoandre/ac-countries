@@ -2,9 +2,9 @@ import styled from "styled-components";
 import { grey } from "../../styles/theme";
 
 export const TableContainer = styled.section`
-  max-width: 100%;
+  max-width: 950px;
   overflow-x: auto;
-  min-width: 100%;
+  width: 100%;
 `;
 
 export const TableStyled = styled.table`
@@ -18,7 +18,7 @@ export const TableHead = styled.thead`
 
 export const TableRow = styled.tr`
   min-width: 100%;
-  
+
   &:nth-child(even) {
     background-color: ${grey.lightest};
   }

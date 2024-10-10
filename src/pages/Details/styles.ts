@@ -28,7 +28,7 @@ export const ContainerInformations = styled.div`
   width: 100%;
   justify-content: center;
   align-items: center;
-  
+
   @media (max-width: 700px) {
     flex-direction: column;
     align-items: flex-start;

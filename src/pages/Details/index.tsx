@@ -8,7 +8,7 @@ import useCountries from "../../hooks/countries";
 import { fontWeight } from "../../styles/theme";
 
 import { Header, Footer, Loader, Typography } from "../../components";
-import { LineChart, Informations } from "./components";
+import { LineChart, Informations, MapCountrie } from "./components";
 
 import * as styles from "./styles";
 
@@ -74,6 +74,13 @@ const Details = (): JSX.Element => {
 
             <LineChart countrie={countrie} />
           </styles.ContainerInformations>
+
+          <MapCountrie
+            position={{
+              lat: countrie?.latlng[0] || 0,
+              lng: countrie?.latlng[1] || 0,
+            }}
+          />
         </styles.Container>
 
         <Footer />

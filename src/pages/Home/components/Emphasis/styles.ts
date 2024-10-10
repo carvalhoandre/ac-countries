@@ -7,7 +7,7 @@ export const Container = styled.section`
   justify-content: center;
   align-items: center;
   margin-top: 5rem;
-  gap: 1rem;
+  gap: 3rem;
 
   @media screen and (min-width: 768px) {
     display: flex;
@@ -19,18 +19,7 @@ export const ContainerText = styled.div`
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
-  width: 18rem;
-`;
-
-export const Image = styled.img`
-  max-width: 350px;
-  max-height: 350px;
-
-  @media screen and (max-width: 767px) {
-    max-width: 250px;
-    max-height: 250px;
-    margin-top: 1.5rem;
-  }
+  text-align: center;
 `;
 
 export const Info = styled.div`

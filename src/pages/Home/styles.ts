@@ -14,3 +14,15 @@ export const Container = styled.div`
 
   gap: 1rem;
 `;
+
+export const Image = styled.img`
+  max-width: 350px;
+  max-height: 350px;
+  margin: 22px auto;
+
+  @media screen and (max-width: 767px) {
+    max-width: 250px;
+    max-height: 250px;
+    margin-top: 1.5rem;
+  }
+`;

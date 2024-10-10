@@ -6,6 +6,8 @@ export const Container = styled.div`
   flex-direction: row;
   gap: 1em;
   align-items: center;
+  width: 100%;
+  justify-content: center;
 `;
 
 export const Search = styled.div`
@@ -17,7 +19,8 @@ export const Search = styled.div`
   border-radius: 0.5em;
   padding: 0.4em 0.9em;
   background-color: ${grey.white};
-  width: 15rem;
+  width: 30%;
+  height: 2rem;
   position: relative;
 
   @media screen and (max-width: 767px) {
@@ -64,12 +67,13 @@ export const ButtonSearch = styled.button`
   border: none;
   border-radius: 0.5rem;
   width: 8rem;
+  height: 2.8 rem;
   cursor: pointer;
 
   &:hover {
     background-color: ${primary.light};
   }
-  
+
   &:disabled {
     background-color: ${primary.lighter};
     cursor: not-allowed;

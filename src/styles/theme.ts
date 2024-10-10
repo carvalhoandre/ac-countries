@@ -7,7 +7,7 @@ export const fontSize = {
   heading: "1.1rem",
   heading2: "1.2rem",
   heading4: "1.5rem",
-  xl: "2.6rem",
+  xl: "3rem",
 };
 
 export const fontWeight = {
@@ -34,11 +34,11 @@ export const grey = {
 };
 
 export const primary = {
-  darkest: "#3F3D56",
-  dark: "#363280",
-  default: "#5650CC",
-  light: "#6C63FF",
-  lighter: "#B4B0FF",
+  darkest: "#262626",
+  dark: "#121212",
+  default: "#262626",
+  light: "#303030",
+  lighter: "#5e5e5e",
 };
 
 export const palette = {

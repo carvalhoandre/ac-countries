@@ -35,7 +35,7 @@ export const Table = ({ countries }: ITableProps): JSX.Element => {
     "Moeda",
     "População",
   ];
-  
+
   return (
     <TableContainer>
       <TableStyled>
@@ -51,7 +51,7 @@ export const Table = ({ countries }: ITableProps): JSX.Element => {
 
         <tbody>
           {countries?.map((countrie, index) => {
-            let countrieName =
+            const countrieName =
               countrie.name.official !== countrie.name.official
                 ? `${countrie.name.official} / ${countrie.name.common}`
                 : countrie.name.official;

@@ -1,3 +1,5 @@
+import TheWorld from "../../assets/unDraw/around_the_world.svg";
+
 import { Header, Footer } from "../../components";
 
 import { Countries, Emphasis } from "./components";
@@ -13,6 +15,8 @@ const Home = () => {
           <Emphasis />
 
           <Countries />
+
+          <styles.Image src={TheWorld} alt="Imagem Representativa" />
         </styles.Container>
 
         <Footer />

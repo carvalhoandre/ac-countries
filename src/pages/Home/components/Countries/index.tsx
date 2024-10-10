@@ -25,7 +25,7 @@ export const Countries = (): JSX.Element => {
     <styles.Container>
       <Search onChange={setCountries} />
 
-      {hasCountries ? (
+      {hasCountries && (
         <>
           <ActionsIcon view={view} handleUpdateView={handleUpdateView} />
 
@@ -35,9 +35,9 @@ export const Countries = (): JSX.Element => {
             <List countries={countries} />
           )}
         </>
-      ) : (
-        <Highlighted />
       )}
+
+      <Highlighted />
     </styles.Container>
   );
 };
