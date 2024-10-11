@@ -101,8 +101,8 @@ const LineChart = ({ countrie }: IPropsLineChart): JSX.Element => {
     <Chart
       options={state.options}
       series={state.series}
-      height="100%"
-      width="100%"
+      height="450px"
+      width="700px"
       type="bar"
     />
   );

@@ -66,6 +66,17 @@ const Details = (): JSX.Element => {
           </styles.Line>
 
           <Typography $weight={fontWeight.medium} size="lg" $textAlign="center">
+            Localização:
+          </Typography>
+
+          <MapCountrie
+            position={{
+              lat: countrie?.latlng[0] || 0,
+              lng: countrie?.latlng[1] || 0,
+            }}
+          />
+
+          <Typography $weight={fontWeight.medium} size="lg" $textAlign="center">
             Informações Principais:
           </Typography>
 
@@ -74,13 +85,6 @@ const Details = (): JSX.Element => {
 
             <LineChart countrie={countrie} />
           </styles.ContainerInformations>
-
-          <MapCountrie
-            position={{
-              lat: countrie?.latlng[0] || 0,
-              lng: countrie?.latlng[1] || 0,
-            }}
-          />
         </styles.Container>
 
         <Footer />
