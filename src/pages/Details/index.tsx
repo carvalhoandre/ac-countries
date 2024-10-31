@@ -8,7 +8,13 @@ import useCountries from "../../hooks/countries";
 import { fontWeight } from "../../styles/theme";
 
 import { Header, Footer, Loader, Typography } from "../../components";
-import { Informations, LineChart, MapCountrie } from "./components";
+import {
+  LineChart,
+  PieChart,
+  Informations,
+  MapCountrie,
+  AreaChart,
+} from "./components";
 
 import * as styles from "./styles";
 
@@ -78,11 +84,44 @@ const Details = (): JSX.Element => {
             }}
           />
 
-          <Typography $weight={fontWeight.medium} size="xl" $textAlign="center">
-            População x Área
-          </Typography>
+          <styles.DashboardContainer>
+            <styles.ChartSection>
+              <Typography size="lg" $textAlign="center">
+                Indicadores Demográficos
+              </Typography>
 
-          <LineChart countrie={countrie} />
+              <LineChart
+                name={countrie.name.official}
+                population={countrie.population}
+                area={countrie.area}
+              />
+            </styles.ChartSection>
+
+            <styles.ChartSection>
+              <Typography size="lg" $textAlign="center">
+                Distribuição de Moeda e Idioma
+              </Typography>
+
+              <PieChart
+                currencies={Object.values(countrie.currencies).map(
+                  (currency) => currency.name
+                )}
+                languages={Object.values(countrie.languages)}
+              />
+            </styles.ChartSection>
+
+            <styles.ChartSection>
+              <Typography size="lg" $textAlign="center">
+                Distribuição de Área e População
+              </Typography>
+
+              <AreaChart
+                name={countrie.name.official}
+                population={countrie.population}
+                area={countrie.area}
+              />
+            </styles.ChartSection>
+          </styles.DashboardContainer>
         </styles.Container>
 
         <Footer />

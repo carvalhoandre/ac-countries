@@ -47,3 +47,16 @@ export const Line = styled.div`
   align-items: center;
   justify-content: center;
 `;
+
+export const DashboardContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+`;
+
+export const ChartSection = styled.div`
+  padding: 2rem;
+  background: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+`;

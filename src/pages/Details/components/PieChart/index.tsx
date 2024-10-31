@@ -1,44 +1,16 @@
-import { IPropsLineChart } from "../LineChart/types";
 import Chart from "react-apexcharts";
 import { ApexOptions } from "apexcharts";
 
-const PieChart = ({ countrie }: IPropsLineChart): JSX.Element => {
-  const state: { series: number[]; options: ApexOptions } = {
-    series: [
-      countrie.population,
-      countrie.area,
-      Object.keys(countrie.languages).length,
-    ],
-    options: {
-      chart: {
-        type: "pie",
-        height: "auto",
-      },
-      labels: ["População", "Área", "Número de Línguas"],
-      responsive: [
-        {
-          breakpoint: 1024,
-          options: {
-            chart: {
-              width: "100%",
-              height: "auto",
-            },
-          },
-        },
-        {
-          breakpoint: 768,
-          options: {
-            chart: {
-              width: "100%",
-              height: "auto",
-            },
-          },
-        },
-      ],
-    },
+import { IPieChart } from "./types";
+
+const PieChart = ({ currencies, languages }: IPieChart) => {
+  const options: ApexOptions = {
+    labels: [...currencies, ...languages],
   };
 
-  return <Chart options={state.options} series={state.series} type="pie" />;
+  const series = [...currencies.map(() => 1), ...languages.map(() => 1)];
+
+  return <Chart options={options} series={series} type="pie" height={350} />;
 };
 
 export default PieChart;

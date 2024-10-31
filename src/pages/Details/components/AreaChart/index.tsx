@@ -1,12 +1,12 @@
 import Chart from "react-apexcharts";
 import { ApexOptions } from "apexcharts";
 
-import { ILineChart } from "./types";
+import { IAreaChart } from "./types";
 
-const LineChart = ({ area, name, population }: ILineChart) => {
+const AreaChart = ({ area, name, population }: IAreaChart) => {
   const options: ApexOptions = {
     chart: {
-      type: "line",
+      type: "area",
       height: "auto",
     },
     xaxis: {
@@ -24,7 +24,7 @@ const LineChart = ({ area, name, population }: ILineChart) => {
     },
   ];
 
-  return <Chart options={options} series={series} type="line" height={350} />;
+  return <Chart options={options} series={series} type="area" height={350} />;
 };
 
-export default LineChart;
+export default AreaChart;
