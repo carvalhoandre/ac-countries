@@ -46,6 +46,6 @@ img {
 /* selection */
 
 *::selection {
-  background-color: #5650cc;
+  background-color: #1c1c1c;
   color: #fff;
 }

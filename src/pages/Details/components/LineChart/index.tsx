@@ -1,8 +1,9 @@
 import Chart from "react-apexcharts";
+import { ApexOptions } from "apexcharts";
+
 import { IPropsLineChart } from "./types";
 import { formatNumber } from "../../../../helpers/numbers";
 import { fontSize, fontWeight, grey } from "../../../../styles/theme";
-import { ApexOptions } from "apexcharts"; // Import ApexOptions type
 
 const LineChart = ({ countrie }: IPropsLineChart): JSX.Element => {
   const state: { series: any[]; options: ApexOptions } = {
@@ -102,7 +103,6 @@ const LineChart = ({ countrie }: IPropsLineChart): JSX.Element => {
       options={state.options}
       series={state.series}
       height="450px"
-      width="700px"
       type="bar"
     />
   );

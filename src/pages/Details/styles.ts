@@ -4,21 +4,21 @@ export const Content = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  height: calc(90vh - 10px);
+  height: calc(100vh - 80px);
+  padding: 1rem;
 `;
 
 export const Container = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 4rem;
+  gap: 3.5rem;
   width: 100%;
-  padding: 3rem 0;
-
-  justify-content: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
 
   @media (max-width: 700px) {
-    padding: 2rem 1rem;
-    gap: 2rem;
+    padding: 1rem;
   }
 `;
 
@@ -36,7 +36,7 @@ export const ContainerInformations = styled.div`
 `;
 
 export const FlagImage = styled.img`
-  width: 3rem;
+  width: 5rem;
   height: auto;
 `;
 

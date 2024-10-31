@@ -8,7 +8,9 @@ import * as styles from "./styles";
 const Information = ({ title, text }: IInformationProps): JSX.Element => {
   return (
     <styles.Container>
-      <Typography $weight={fontWeight.medium}>{title}</Typography>
+      <Typography $weight={fontWeight.medium} size="lg" $textAlign="left">
+        {title}:
+      </Typography>
 
       <Typography>{text}</Typography>
     </styles.Container>

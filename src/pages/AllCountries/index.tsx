@@ -49,7 +49,7 @@ const AllCountries = () => {
 
   return (
     <>
-      <Header />
+      <Header hasGoBack />
 
       <styles.Content>
         <styles.Container>

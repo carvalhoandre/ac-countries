@@ -14,23 +14,23 @@ const Informations = ({ countrie }: IInformationProps): JSX.Element => {
 
   return (
     <styles.Container>
+      <Information title="População" text={formatNumber(countrie.population)} />
+
+      <Information title="Capital" text={countrie.capital.join(", ")} />
+
+      <Information title="Continente" text={countrie.continents.join(", ")} />
+
       <Information
-        title="População:"
-        text={formatNumber(countrie.population)}
+        title="Área"
+        text={`${countrie.area.toLocaleString()} km²`}
       />
 
-      <Information title="Área:" text={`${formatNumber(countrie.area)} km²`} />
-
-      <Information title="Capital:" text={countrie.capital.join(", ")} />
-
-      <Information title="Continente:" text={countrie.continents.join(", ")} />
-
       <Information
-        title="Línguas:"
+        title="Línguas"
         text={Object.values(countrie.languages).join(", ")}
       />
 
-      <Information title="Moedas:" text={`${coins.map((coin) => coin)}`} />
+      <Information title="Moedas" text={`${coins.map((coin) => coin)}`} />
     </styles.Container>
   );
 };

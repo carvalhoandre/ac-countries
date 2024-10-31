@@ -8,7 +8,7 @@ import useCountries from "../../hooks/countries";
 import { fontWeight } from "../../styles/theme";
 
 import { Header, Footer, Loader, Typography } from "../../components";
-import { LineChart, Informations, MapCountrie } from "./components";
+import { Informations, LineChart, MapCountrie } from "./components";
 
 import * as styles from "./styles";
 
@@ -46,11 +46,16 @@ const Details = (): JSX.Element => {
 
   return (
     <>
-      <Header />
+      <Header hasGoBack />
 
       <styles.Content>
         <styles.Container>
           <styles.Line>
+            <styles.FlagImage
+              src={countrie?.flags.svg}
+              alt={countrie?.flags.alt}
+            />
+
             <Typography
               $weight={fontWeight.extraBold}
               size="xl"
@@ -58,14 +63,11 @@ const Details = (): JSX.Element => {
             >
               {countrie?.name.official}
             </Typography>
-
-            <styles.FlagImage
-              src={countrie?.flags.svg}
-              alt={countrie?.flags.alt}
-            />
           </styles.Line>
 
-          <Typography $weight={fontWeight.medium} size="lg" $textAlign="center">
+          <Informations countrie={countrie} />
+
+          <Typography $weight={fontWeight.medium} size="xl" $textAlign="center">
             Localização:
           </Typography>
 
@@ -76,15 +78,11 @@ const Details = (): JSX.Element => {
             }}
           />
 
-          <Typography $weight={fontWeight.medium} size="lg" $textAlign="center">
-            Informações Principais:
+          <Typography $weight={fontWeight.medium} size="xl" $textAlign="center">
+            População x Área
           </Typography>
 
-          <styles.ContainerInformations>
-            <Informations countrie={countrie} />
-
-            <LineChart countrie={countrie} />
-          </styles.ContainerInformations>
+          <LineChart countrie={countrie} />
         </styles.Container>
 
         <Footer />
