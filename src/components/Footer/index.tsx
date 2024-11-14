@@ -10,7 +10,7 @@ export const Footer: React.FC = () => {
     <styles.Footer>
       <styles.Content>
         <Typography size="sm" color={grey.darkest}>
-          &#169; André Carvalho. All rigths reserved
+          &#169; André Leite Carvalho. All rigths reserved
         </Typography>
       </styles.Content>
     </styles.Footer>

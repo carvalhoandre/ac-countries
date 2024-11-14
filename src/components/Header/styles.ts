@@ -34,6 +34,10 @@ export const Container = styled.div`
   flex-direction: row;
   gap: 1rem;
   align-items: center;
+
+  @media (max-width: 800px) {
+    padding-left: 1rem;
+  }
 `;
 
 export const SubContainer = styled.div`

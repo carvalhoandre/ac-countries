@@ -46,12 +46,20 @@ export const Line = styled.div`
   gap: 1rem;
   align-items: center;
   justify-content: center;
+
+  @media (max-width: 800px) {
+    flex-direction: column;
+  }
 `;
 
 export const DashboardContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  gap: 3rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+
+  @media (max-width: 1280px) {
+    grid-template-columns: 1fr;
+  }
 `;
 
 export const ChartSection = styled.div`

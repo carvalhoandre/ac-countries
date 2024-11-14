@@ -16,7 +16,6 @@ export const Content = styled.div`
   height: 100%;
   height: 380px;
 
-  max-width: calc(100vw - 40%);
   border-radius: 10px;
   position: relative;
 

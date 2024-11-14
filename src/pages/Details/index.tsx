@@ -8,13 +8,7 @@ import useCountries from "../../hooks/countries";
 import { fontWeight } from "../../styles/theme";
 
 import { Header, Footer, Loader, Typography } from "../../components";
-import {
-  LineChart,
-  PieChart,
-  Informations,
-  MapCountrie,
-  AreaChart,
-} from "./components";
+import { PieChart, Informations, MapCountrie, AreaChart } from "./components";
 
 import * as styles from "./styles";
 
@@ -84,19 +78,11 @@ const Details = (): JSX.Element => {
             }}
           />
 
+          <Typography $weight={fontWeight.medium} size="xl" $textAlign="center">
+            Gráficos:
+          </Typography>
+
           <styles.DashboardContainer>
-            <styles.ChartSection>
-              <Typography size="lg" $textAlign="center">
-                Indicadores Demográficos
-              </Typography>
-
-              <LineChart
-                name={countrie.name.official}
-                population={countrie.population}
-                area={countrie.area}
-              />
-            </styles.ChartSection>
-
             <styles.ChartSection>
               <Typography size="lg" $textAlign="center">
                 Distribuição de Moeda e Idioma
